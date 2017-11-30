@@ -90,9 +90,9 @@ def grade_calc(percentage):
 #     print(k)
 
 response = ""
-# while response != "Hello":
-#     response = input("Say \"Hello\"")  # \ escape character
-print("Hello \nWorld") # \n = newline
-
-import random
-print(random.randint(0,6)) #imports should be at the top
+while response != "Hello":
+    response = input("Say \"Hello\"")  # \ escape character
+    print("Hello \nWorld") # \n = newline
+#
+# import random
+    # print(random.randint(0,6))  #imports should be at the top
