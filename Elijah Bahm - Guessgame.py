@@ -9,3 +9,11 @@ print(random.randint(1, 50))
 # while response != "Hello":
 #     response = input("Say \"Hello\"")  # \ escape character
 #     print("Hello \nWorld") # \n = newline
+
+# Generate #
+# Get a #(input) from user
+# Compare # to input
+# Add higher or lower
+# Add guesses
+
+# Make variable for guesses
