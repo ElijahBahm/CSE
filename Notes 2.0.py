@@ -96,3 +96,18 @@ while response != "Hello":
 #
 # import random
     # print(random.randint(0,6))  #imports should be at the top
+
+
+# Comparisons
+print(1 == 1)   # Two equal signs to compare
+print(1 != 2)   # One is not equal to 2
+print(not False)   # This prints True
+print(1 == 1 and 4 <= 5)
+print(1 < 0 or 5 > 1)
+
+
+# Recasting
+c = '1'  # string
+print(c == 1)
+print(int(c) == 1) # compares 2 ints
+print(c == str(1)) # compares 2 strings
