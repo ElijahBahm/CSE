@@ -39,3 +39,20 @@ def add_py(name):
     name = input("Name please.")
     print("%s.py" % name)
     print(name + ".py")
+
+
+"""Write a function called "add"
+which takes three parameters
+and prints the sum of the numbers 
+"""
+
+
+def add(a,b,c):
+    # a = input("Number please.")
+    # b = input("Number please.")
+    # c = input("Number please.")
+    print(a+b+c)
+
+
+add(90, 900, 9000)
+add(90, 900, 9000)
