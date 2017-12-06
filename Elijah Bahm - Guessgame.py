@@ -1,16 +1,20 @@
 import random
 # Elijah Bahm
 
-print(random.randint(1, 50))
 number = (random.randint(1, 50))
 print("Guess a number 1-50.")
-guess = input("What is your guess?")
-if (int(guess) == number):
-    print("Correct.")
-if (int(guess) > number):
-    print("Lower.")
-if (int(guess) < number):
-    print("Higher.")
+guess = "0"
+guess_amount = 0
+
+
+while int(guess) != number:
+    guess = input("What is your guess?")
+    if guess == str(number):
+        print("Correct.")
+    elif (int(guess) >= number):
+        print("Lower.")
+    elif (int(guess) <= number):
+        print("Higher.")
 
 
 
