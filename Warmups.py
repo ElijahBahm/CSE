@@ -54,5 +54,15 @@ def add(a,b,c):
     print(a+b+c)
 
 
-add(90, 900, 9000)
-add(90, 900, 9000)
+# add(90, 900, 9000)
+# add(90, 900, 9000)
+
+
+def repeat(string):
+    string = "Hello"
+    print(string)
+    print(string)
+    print(string)
+
+    for x in range(3):
+        print(string)

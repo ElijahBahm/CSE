@@ -4,18 +4,20 @@ import random
 number = (random.randint(1, 50))
 print("Guess a number 1-50.")
 guess = "0"
-guess_amount = 0
+guesses = 0
 
-
-while int(guess) != number:
+while int(guess) != number and guesses < 5:
     guess = input("What is your guess?")
     if guess == str(number):
         print("Correct.")
     elif (int(guess) >= number):
         print("Lower.")
+        guesses += 1
     elif (int(guess) <= number):
         print("Higher.")
-
+        guesses += 1
+if guesses >= 5:
+    print("Get le f@#$ed.")
 
 
 # print(int(c) == 1)
