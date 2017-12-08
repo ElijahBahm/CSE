@@ -72,4 +72,4 @@ def date(month, day, year):
     month = input("Month please.")
     day = input("Day please.")
     year = input("Year please.")
-    print(month/day/year)
+    print(str(month) + "/" + str(day) + "/" + str(year))
