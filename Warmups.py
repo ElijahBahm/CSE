@@ -66,3 +66,10 @@ def repeat(string):
 
     for x in range(3):
         print(string)
+
+
+def date(month, day, year):
+    month = input("Month please.")
+    day = input("Day please.")
+    year = input("Year please.")
+    print(month/day/year)
