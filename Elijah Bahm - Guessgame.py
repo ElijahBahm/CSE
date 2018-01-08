@@ -1,11 +1,13 @@
 import random
 # Elijah Bahm
 
+# Initializing Variables
 number = (random.randint(1, 50))
 print("Guess a number 1-50.")
 guess = "0"
 guesses = 0
 
+# Describes one turn. The while loop is the Game Controller.
 while int(guess) != number and guesses < 5:
     guess = input("What is your guess?")
     if guess == str(number):
