@@ -35,5 +35,4 @@ if money == 0:
     if max_money < 15:
         print("You should've never played.")
     elif max_money > 14:
-        print("You should have stopped at round %s when you had $ %s." % (rounds, max_money))
-
+        print("You should have stopped at round %s when you had $%s." % (rounds, max_money))
