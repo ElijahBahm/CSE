@@ -1,5 +1,5 @@
 import random
-
+# Elijah Bahm
 
 money = 15
 max_money = 15
@@ -37,7 +37,3 @@ if money == 0:
     elif max_money > 14:
         print("You should have stopped at round %s when you had $ %s." % (rounds, max_money))
 
-# max(max_money, money)
-# print(max(max_money, money))
-# filter(max(max_money, money))
-# print(filter(max(max_money, money)))
