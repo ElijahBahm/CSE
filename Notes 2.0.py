@@ -34,11 +34,11 @@
 # # Functions
 #
 #
-def print_hw() :
-    print("Hello World")
+# def print_hw() :
+#     print("Hello World")
 #
 #
-print_hw()
+# print_hw()
 #
 #
 # def say_hi(name):
@@ -59,8 +59,8 @@ print_hw()
 # birthday(15)
 
 
-def f(x):
-    return x**5 + 4 * x ** 4 -17*x**2+4
+# def f(x):
+#     return x**5 + 4 * x ** 4 -17*x**2+4
 
 
 # print(f(3))
@@ -68,17 +68,17 @@ def f(x):
 
 # If statements
 
-def grade_calc(percentage):
-    if percentage >= 90:
-        return "A"
-    elif percentage >= 80:
-        return "B"
-    elif percentage >= 70:
-        return "C"
-    elif percentage >= 60:
-        return "D"
-    else:
-        return "F"
+# def grade_calc(percentage):
+#     if percentage >= 90:
+#         return "A"
+#     elif percentage >= 80:
+#         return "B"
+#     elif percentage >= 70:
+#         return "C"
+#     elif percentage >= 60:
+#         return "D"
+#     else:
+#         return "F"
 
 
 # Loops
@@ -89,25 +89,62 @@ def grade_calc(percentage):
 # for k in "Hello World":
 #     print(k)
 
-response = ""
-while response != "Hello":
-    response = input("Say \"Hello\"")  # \ escape character
-    print("Hello \nWorld") # \n = newline
+# response = ""
+# while response != "Hello":
+#     response = input("Say \"Hello\"")  # \ escape character
+#     print("Hello \nWorld") # \n = newline
 #
 # import random
     # print(random.randint(0,6))  #imports should be at the top
 
 
 # Comparisons
-print(1 == 1)   # Two equal signs to compare
-print(1 != 2)   # One is not equal to 2
-print(not False)   # This prints True
-print(1 == 1 and 4 <= 5)
-print(1 < 0 or 5 > 1)
+# print(1 == 1)   # Two equal signs to compare
+# print(1 != 2)   # One is not equal to 2
+# print(not False)   # This prints True
+# print(1 == 1 and 4 <= 5)
+# print(1 < 0 or 5 > 1)
 
 
 # Recasting
-c = '1'  # string
-print(c == 1)
-print(int(c) == 1) # compares 2 ints
-print(c == str(1)) # compares 2 strings
+# c = '1'  # string
+# print(c == 1)
+# print(int(c) == 1) # compares 2 ints
+# print(c == str(1)) # compares 2 strings
+
+
+# Lists
+
+the_count = [1, 2, 3, 4, 5]
+characters = ["Graves", "Dory", "Boots", "Dora", "Shrek", "Obi-wan", "Carl"]
+print(characters[0])
+print(characters[4])
+
+print(len(characters))
+# len = length of list
+
+# Going through lists
+for char in characters:
+    print(char)
+
+for num in the_count:
+    # print(num)
+    print(num ** 2)
+
+len(characters)
+range(3)  # list of 0-2
+range(len(characters))  # Makes a list of All Indices
+
+for num in range(len(characters)):
+    char = characters[num]
+    print("The character at index %d is %s" % (num, char))   # %d is digit and %s is string
+
+str1 = "Hello World!"
+listOne = list(str1)
+listOne[11] = '.'
+print(listOne)
+newStr = "".join(listOne)
+print(newStr)
+
+#
+# Add and remove items from lists during running of program
