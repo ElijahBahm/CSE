@@ -95,7 +95,7 @@
 #     print("Hello \nWorld") # \n = newline
 #
 # import random
-    # print(random.randint(0,6))  #imports should be at the top
+# print(random.randint(0,6))  #imports should be at the top
 
 
 # Comparisons
@@ -145,6 +145,32 @@ listOne[11] = '.'
 print(listOne)
 newStr = "".join(listOne)
 print(newStr)
+print(listOne[-1])
+# -index goes backwards
 
-#
-# Add and remove items from lists during running of program
+# Add items from lists
+
+characters.append("Ironman/by Black Sabbath")
+print(characters)
+
+characters.append("Fugglet")
+print(characters)
+
+# Remove items from list
+
+characters.remove("Carl")
+print(characters)
+
+characters.pop(4)
+print(characters)
+
+# the string class
+import string
+print(string.ascii_letters)
+print(string.ascii_lowercase)
+print(string.digits)
+print(string.punctuation)
+
+strTwo = 'ThIs SeNtEncE iS UnUsUaL'
+lowercase = strTwo.lower()
+print(lowercase)
