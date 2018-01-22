@@ -16,4 +16,5 @@ Word_Bank = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyanide P
 guess = "0"
 word = random.r
 
-while guess != word
+while guess != word:
+    
