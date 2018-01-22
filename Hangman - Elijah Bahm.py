@@ -11,10 +11,13 @@ Outline of Hangman
 """
 
 
-Word_Bank = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyanide Plays Games",
-             "Soviet Womble", "Achievement Hunter", "eMBeaR", "Oompaville", "Kugo"]
+Fav_Streamers = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyanide Plays Games",
+                 "Soviet Womble", "Achievement Hunter", "eMBeaR", "Oompaville", "Kugo"]
 guess = "0"
-word = random.r
+guesses = 0
+word = random.choice(Fav_Streamers)
+letter = {"%s" % word}
+letters_guessed = "a"
 
-while guess != word:
-    
+while guess != letter and guesses < 10:
+    guess = input("Choose a letter, to save your Friend.")
