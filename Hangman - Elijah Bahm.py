@@ -16,13 +16,16 @@ Fav_Streamers = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyani
 guess = "0"
 guesses_left = 10
 word = random.choice(Fav_Streamers)
-hidden_word = ["%s" % word]
 letters_guessed = []
 
 while guesses_left > 0:
     guess = input("Choose a letter, to save your Friend.")
-    if guess == letter in hidden_word:
-
-
-    for letter in hidden_word:
-
+    letters_guessed.append(guess)
+    output = []
+    for letter in word:
+        if letter in letters_guessed:
+            output.append(guess)
+    if guess != letter in word:
+            guesses_left - 1
+    elif guess == letter in word:
+            print(output)
