@@ -16,7 +16,7 @@ Fav_Streamers = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyani
 
 guesses_left = 10
 word = random.choice(Fav_Streamers)
-# word =
+word.lower()
 letters_guessed = []
 
 while guesses_left > 0:
@@ -29,3 +29,6 @@ while guesses_left > 0:
     print(output)
     guess = input("Choose a letter, to save your Friend.")
     letters_guessed.append(guess)
+
+    # if guess != letter:
+    #     guesses_left + 1
