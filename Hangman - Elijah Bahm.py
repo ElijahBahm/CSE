@@ -12,12 +12,15 @@ Outline of Hangman
 
 
 Fav_Streamers = ["Fugglet", "Shroud", "HCJustin", "Box-Box", "ChocoTaco", "Cyanide Plays Games",
-                 "Soviet Womble", "Achievement Hunter", "eMBeaR", "Oompaville", "Kugo", ]
+                 "Soviet Womble", "Achievement Hunter", "eMBeaR", "Oompaville", "Kugo", "John on the Radio",
+                 "Aculite", "Tomographic", "Dr. Disrespect"]
 
-guesses_left = 0
+guesses_left = 10
 word = random.choice(Fav_Streamers)
 letters_guessed = list(string.punctuation + " ")
-while guesses_left < 10:
+
+output = []
+while guesses_left > 0 and "".join(output) != word:
     output = []
     for letter in word:
         if letter.lower() in letters_guessed:
@@ -25,15 +28,11 @@ while guesses_left < 10:
         else:
             output.append("^")
     print("".join(output))
-    guess = input("Choose a letter, to save your Friend.").lower()
-    letters_guessed.append(guess)
     if "".join(output) == word:
         print("Good job.")
-    while "".join(output) == word:
-        guesses_left + 10
-
-
-
-
-
-
+        continue
+    guess = input("Choose a letter, to save your Friend.").lower()
+    letters_guessed.append(guess)
+    if guess not in word.lower():
+        guesses_left -= 1
+        print("You have %d guesses left" % guesses_left)
