@@ -251,5 +251,6 @@ xxl_dictionary = {
 }
 
 
-print(xxl_dictionary["MI"]["Border ST"[2]])
-print(xxl_dictionary["MI"])
+# print(xxl_dictionary["MI"]["Border ST"][2])
+print(xxl_dictionary["MI"]["Border ST"][1])
+
