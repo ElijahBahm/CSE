@@ -186,6 +186,12 @@ print(dictionary['name'])
 print(dictionary['age'])
 print(dictionary['height'])
 
+# Adding to a dictionary
+dictionary["eye colour"] = "bleu"
+dictionary["paper towels"] = True
+print(dictionary)
+
+'''
 large_dictionary = {
     "California": "CA",
     "Michigan": "MI",
@@ -253,4 +259,4 @@ xxl_dictionary = {
 
 # print(xxl_dictionary["MI"]["Border ST"][2])
 print(xxl_dictionary["MI"]["Border ST"][1])
-
+'''
