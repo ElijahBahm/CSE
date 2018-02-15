@@ -6,7 +6,6 @@ world_map = {
         'PATHS': {
             'NORTH': 'TOWNHALL',
             'WEST': 'MARKET'
-            ''
         }
     },
     'MARKET': {
@@ -14,7 +13,7 @@ world_map = {
         'DESCRIPTION': 'You are in what used to be a giant bazaar, now there is only one vendor open. \n His shop'
                        ' is only slightly nicer than the than the abandoned ones, mainly just less dusty.',
         'PATHS': {
-            'WEST': 'WESTHOUSE'
+            'EAST': 'TOWNSQUARE'
         }
     },
     'TOWNHALL': {
@@ -22,16 +21,77 @@ world_map = {
         'DESCRIPTION': 'You are in a very long, dark, and tall building. It has a small display of the \n '
                        'founding of the town and on of something like a teleporter that needs a special key to use.',
         'PATHS': {
-            'WEST': "WESTHOUSE"
+            'WEST': "PUBLICRESTROOM",
+            'SOUTH': 'TOWNSQUARE'
         }
     },
     'PUBLICRESTROOM': {
         'NAME': 'THE ONE PUBLIC RESTROOM',
         'DESCRIPTION': '',
         'PATHS': {
-            'SOUTHEAST': 'TOWNSQUARE'
+            'SOUTHEAST': 'TOWNSQUARE',
+            'EAST': 'TOWNHALL'
         }
-    }
+    },
+    'RIDESTATION': {
+        'NAME': 'CATCH-A-RIDE STATION',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'NORTH': 'BADLANDS',
+            'WEST': 'TOWNSQUARE',
+            'SOUTH': 'WORLDS_END',
+            'EAST': 'DEATH'
+        }
+    },
+    'BADLANDS': {
+        'NAME': 'THE BADLANDS',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'SOUTH': 'RIDESTATION',
+            'EAST': 'SUFFERING'
+        }
+    },
+    'SUFFERING': {
+        'NAME': 'SUFFERING',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'SOUTH': 'DEATH',
+            'WEST': 'BADLANDS'
+        }
+    },
+    'DEATH': {
+        'NAME': 'DEATH, "THE TOWN"',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'SOUTH': 'SICK',
+            'WEST': 'RIDESTATION',
+            'NORTH': 'SUFFERING',
+            'SOUTHEAST': 'DAMAGECONTROL',
+            'NORTHEAST': 'LOATHING'
+        }
+    },
+    'LOATHING': {
+        'NAME': 'LOATHING',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'SOUTHWEST': 'DEATH'
+        }
+    },
+    'DAMAGECONTROL': {
+        'NAME': 'DAMAGE CONTROL',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'NORTHWEST': 'DEATH'
+        }
+    },
+    '': {
+        'NAME': '',
+        'DESCRIPTION': '',
+        'PATHS': {
+            'SOUTH': '',
+            'WEST': ''
+        }
+    },
 }
 
 current_node = world_map['TOWNSQUARE']
