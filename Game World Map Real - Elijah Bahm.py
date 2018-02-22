@@ -146,7 +146,7 @@ world_map = {
         }
     }
 }
-
+()
 
 current_node = world_map['TOWNSQUARE']
 directions = ['NORTH', 'SOUTH', 'EAST', 'WEST', 'NORTHWEST', 'NORTHEAST', 'SOUTHEAST', 'SOUTHWEST']
