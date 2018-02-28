@@ -4,8 +4,8 @@ loathing_des = input("What event made you loath someone or yourself the most? Pl
 world_map = {
     'TOWNSQUARE': {
         'NAME': 'TOWN SQUARE OF DUST',
-        'DESCRIPTION': 'You are in a big open square in the center of this town. The big sign in front of you '
-                       'says "WELCOME TO DUST".',
+        'DESCRIPTION': 'YOU ARE IN A BIG OPEN SQUARE IN THE CENTER OF THIS TOWN. THE BIG SIGN IN FRONT OF YOU '
+                       'SAYS "WELCOME TO DUST".',
         'PATHS': {
             'NORTH': 'TOWNHALL',
             'WEST': 'MARKET',
