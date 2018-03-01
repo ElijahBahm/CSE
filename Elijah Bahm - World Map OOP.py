@@ -24,3 +24,11 @@ market = Room("The Market", None, None, "town_square", None, None, None, None, N
               ' bazaar, now there is only one vendor open. \n His shop is only slightly nicer than the than the abandoned ones, mainly just less dusty.')
 town_hall = Room("Town Hall", None, "town_square", None, "public_restroom", None, None, None, None, 'You are in a very '
                  'long, dark, and tall building. It has a small display of the \n founding of the town and on of something like a teleporter that needs a special key to use.')
+public_restroom = Room("The One Public Restroom", None, None, "town_hall", None, None, None, "town_square", None, 'You '
+                       'regret coming here, there is s#@!, c#@!, feces, whatever you want to call it, everywhere. \n You have the slightest feeling that something useful will be here.')
+ride_station = Room("Catch-A-Ride-Station", "badlands", "worlds_end", "death", "town_square", None, None, None, None,
+                    'You are in a small area that is covered with a tin roof and has a terminal, that you \n assume will either teleport you or spawn something for you.')
+badlands = Room("The Badlands", None, "ride_station", "suffering", None, None, None, None, None, 'Again, you feel '
+                'regret as soon as you come here, as soon as the eye can see there are \n just heads on bloody stakes '
+                'and bodies strung up with chains every where else in the area. \n And, yet again, you feel that there will be something here.')
+suffering = Room("Suffering", None, "")
