@@ -1,3 +1,6 @@
+loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
+                     "somewhat in depth.")
+
 class Room(******):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description):
         self.name = name
@@ -34,8 +37,16 @@ badlands = Room("The Badlands", None, "ride_station", "suffering", None, None, N
 suffering = Room("Suffering", None, "death", None, "badlands", None, None, None, None, 'You are in the remains of a '
                  'grand city and the last survivor from this city is an old man, \n who is very weak and malnourished, '
                  'he is only a couple feet away from you. You hold his life in the palm of your hand.')
-death = Room("Death, The Town", "suffering", "")
-
+death = Room("Death, The Town", "suffering", "sick", None, "ride_station", None, None, "damage_control", "loathing",
+             'You are in the middle of what used to be a town, until sometime in the past day or past couple hours, \n '
+             'it was burnt to the ground and all you can smell is burnt flesh. Oh, the irony here.')
+loathing = Room("Loathing", None, None, None, None, "death", None, None, None, 'You are in a place that has a projector '
+                'playing a bad time in your life, here it is %s.' % loathing_des)
+damage_control = Room("Damage Control", None, None, None, None, None, "death", None, None, 'You are in an open field '
+                      'that has a hologram of what happened here, it is showing a big riot about something, which caused the police to fight against the civilians.')
+sick = Room("Sick", "death", None, None, "worlds_end", None, None, None, None, 'You are in a town of depressed, '
+            'misunderstood people; to get what you need here you will have to understand what they go through.')
+worlds_end = Room("World's End, The Town", )
 current_node = town_square
 directions = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest']
 short_directions = ['n', 's', 'e', 'w', 'nw', 'ne', 'se', 'sw']
