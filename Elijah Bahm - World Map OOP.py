@@ -1,7 +1,7 @@
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
                      "somewhat in depth.")
 
-class Room(******):
+class Room(object):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description):
         self.name = name
         self.north = north
@@ -46,14 +46,22 @@ damage_control = Room("Damage Control", None, None, None, None, None, "death", N
                       'that has a hologram of what happened here, it is showing a big riot about something, which caused the police to fight against the civilians.')
 sick = Room("Sick", "death", None, None, "worlds_end", None, None, None, None, 'You are in a town of depressed, '
             'misunderstood people; to get what you need here you will have to understand what they go through.')
-worlds_end = Room("World's End, The Town", )
+worlds_end = Room("World's End, The Town", "ride_station", "regret", "sick", "hello", None, None, None, None, 'You are '
+                  'in an aptly named town because sometime recently there was an earthquake that split the town almost in half and cut of their worlds from each other.')
+regret = Room("Regret", "worlds_end", None, None, None, None, None, None, None, 'You are with the body of a man that '
+              'deserves a Darwin Award, he somehow killed himself trying to cut down one of his own trees in his front yard.')
+hello = Room("Hello", None, "novac", "worlds_end", None, None, None, None, None, "You meet someone here the first thing "
+             "they say is the town's slogan 'We didn't want you to be forgot about, so we made our name something that is forever used.")
+novac = Room("NoVac", "hello", None, None, None, None, None, None, None, 'You are in a place that was named again after '
+             'it was abandoned, you overhear this from a conversation a couple paces away from you, you see the "No Vacancy" sign that turned into the "NoVac" sign.')
 current_node = town_square
 directions = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest']
 short_directions = ['n', 's', 'e', 'w', 'nw', 'ne', 'se', 'sw']
 
+
 while True:
-    print(current_node*****)
-    print(current_node*****)
+    print(current_node.name)
+    print(current_node.description)
     command = input('>_').lower().strip()
     if command == 'quit':
         quit(0)
@@ -63,8 +71,9 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-            name_of_node = current_node['PATHS'][command]
-            current_node = world_map[name_of_node]
+            name_of_node = current_node.north[command], current_node.south[command], current_node.east[command], current_node.west[command], \
+                           current_node.southeast[command], current_node.southwest[command], current_node.northeast[command], current_node.southwest[command]
+            current_node =
         except KeyError:
             print('Nope, Sorry.')
     else:
