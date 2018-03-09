@@ -22,4 +22,4 @@ class Character(object):
         self.state = "Afraid."
 
 
-main_charcter = (input("What is your name?"),"l", input("What do you want to carry your items?"), )
+main_charcter = ("Zer0","l", input("What do you want to carry your items?"), )
