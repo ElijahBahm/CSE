@@ -1,5 +1,7 @@
 # Character Class notes : Name, Description, Dialogue?, Inventory, Interact, Move?, Look, Item, Fight, Health, TakeDamage, Stats
 import random
+
+
 class Character(object):
     def __init__(self, name, description, inventory, weaponry, health):
         self.name = name
@@ -22,4 +24,7 @@ class Character(object):
         self.state = "Afraid."
 
 
-main_charcter = ("Zer0","l", input("What do you want to carry your items?"), )
+# command =
+# attack_commands = ["attack", "kill", "fight"]
+
+main_character = ("Zer0", "l", input("What do you want to carry your items?"), "Sword", 15)
