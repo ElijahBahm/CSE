@@ -51,4 +51,3 @@ class Tesla(KeylessCar):
 musk_car = Tesla(2, 200)
 musk_car.turn_on()
 musk_car.fly()
-

@@ -71,9 +71,7 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-            name_of_node = current_node.north[command], current_node.south[command], current_node.east[command], current_node.west[command], \
-                           current_node.southeast[command], current_node.southwest[command], current_node.northeast[command], current_node.southwest[command]
-            current_node =
+
         except KeyError:
             print('Nope, Sorry.')
     else:
