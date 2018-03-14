@@ -22,4 +22,4 @@ class Programmer(Employee):
         self.program = program
 
     def work(self):
-        print("%s is working on %s for %s." % self.name, self.program, self.employer)
+        print("%s is working with %s for %s." % self.name, self.program, self.employer)
