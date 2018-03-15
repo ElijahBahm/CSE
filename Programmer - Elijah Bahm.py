@@ -13,7 +13,7 @@ class Employee(Person):
         self.employer = employer
 
     def work(self):
-        print('%s goes to work for %s' % self.name, self.employer)
+        print('%s goes to work for %s' % (self.name, self.employer))
 
 
 class Programmer(Employee):
@@ -22,4 +22,8 @@ class Programmer(Employee):
         self.program = program
 
     def work(self):
-        print("%s is working with %s for %s." % self.name, self.program, self.employer)
+        print("%s is working with %s for %s." % (self.name, self.program, self.employer))
+
+
+elijah = Programmer("Elijah Bahm", "Master's Degree", "Google", "C++")
+elijah.work()

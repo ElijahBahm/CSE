@@ -1,4 +1,5 @@
-# Character Class notes : Name, Description, Dialogue?, Inventory, Interact, Move?, Look, Item, Fight, Health, TakeDamage, Stats
+# Character Class notes : Name, Description, Dialogue?, Inventory, Interact, Move?, Look, Item, Fight, Health,
+# TakeDamage, Stats
 import random
 
 

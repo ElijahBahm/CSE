@@ -71,7 +71,7 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-
+            current_node.move(command)
         except KeyError:
             print('Nope, Sorry.')
     else:
