@@ -1,6 +1,7 @@
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
                      "somewhat in depth.")
 
+
 class Room(object):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description):
         self.name = name
