@@ -58,6 +58,7 @@ class Weapon(Item):
         self.brand = brand
         self.attack = attack
 
+
 class Character(object):
     def __init__(self, name, description, inventory, weaponry, health, attack):
         self.name = name
