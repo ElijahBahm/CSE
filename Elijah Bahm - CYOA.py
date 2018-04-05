@@ -15,14 +15,16 @@ class Item(object):
 
 
 class Healing(Item):
-    def __init__(self, name, description, use, ):
+    def __init__(self, name, description, use, plus_health):
         super(Healing, self).__init__(name, description, use)
-        self.
+        self.plus_health = plus_health
+
+        def add_health(self):
 
 
 class Healing_Kit(Healing):
-    def __init__(self, name, description, use, ):
-        super(Healing_Kit, self).__init__(name, description, use, )
+    def __init__(self, name, description, use, plus_health, ):
+        super(Healing_Kit, self).__init__(name, description, use, plus_health)
         self.
 
 
@@ -30,6 +32,7 @@ class InstaHealth(Healing):
     def __init__(self, name, description, use, ):
         super(InstaHealth, self).__init__(name, description, use, )
         self.
+        self.color = color
 
 
 class Shield(Item):
@@ -42,7 +45,6 @@ class Shield(Item):
 class Pieces(Item):
     def __init__(self, name, description, use, color, ):
         super(Pieces, self).__init__(name, description, use)
-        self.color = color
         self.
 
 
@@ -112,8 +114,6 @@ class Room(object):
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
                      "somewhat in depth.")
-
-
 town_square = Room("Town Square of Dust", "town_hall", None, "ride_station", "market", None, "public_restroom", None,
                    None, 'You are in a big open square in the center of this town. The big sign in front of you says '
                    '"WELCOME TO DUST".')
