@@ -19,15 +19,14 @@ class Healing(Item):
         super(Healing, self).__init__(name, description, use)
         self.plus_health = plus_health
 
-        def add_health(self):
-
 
 
 class HealingKit(Healing):
     def __init__(self, name, description, use, plus_health, ):
         super(HealingKit, self).__init__(name, description, use, plus_health)
         self.
-
+        def add_health(self):
+            # main_character.health + plus_health
 
 class InstaHealth(Healing):
     def __init__(self, name, description, use, plus_health, color, ):
@@ -64,14 +63,12 @@ class Weapon(Item):
 
 
 class Character(object):
-    def __init__(self, name, description, inventory, weaponry, health, attack):
+    def __init__(self, name, description, inventory, weaponry, health):
         self.name = name
         self.description = description
         self.inventory = inventory
-        self.weaponry = weaponry
         self.health = health
         self.state = "Afraid."
-        self.attack = attack
         # self.dialogue = "Hello."
 
     def meet(self):
@@ -81,12 +78,6 @@ class Character(object):
     def befriend(self):
         self.state = "Happy."
 
-    def attack(self):
-        self.state = "Afraid."
-
-    def defend(self):
-        if self.attack >= 5:
-            self.health - (self.attack - 4)
 
 class Room(object):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description):
@@ -109,9 +100,11 @@ class Room(object):
 
 
 
+med_kit = HealingKit()
 
 
-
+main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", "Very Small "
+                           "Backpack", 15)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
