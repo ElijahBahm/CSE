@@ -22,15 +22,16 @@ class Healing(Item):
         def add_health(self):
 
 
-class Healing_Kit(Healing):
+
+class HealingKit(Healing):
     def __init__(self, name, description, use, plus_health, ):
-        super(Healing_Kit, self).__init__(name, description, use, plus_health)
+        super(HealingKit, self).__init__(name, description, use, plus_health)
         self.
 
 
 class InstaHealth(Healing):
-    def __init__(self, name, description, use, ):
-        super(InstaHealth, self).__init__(name, description, use, )
+    def __init__(self, name, description, use, plus_health, color, ):
+        super(InstaHealth, self).__init__(name, description, use, plus_health)
         self.
         self.color = color
 
@@ -45,6 +46,7 @@ class Shield(Item):
 class Pieces(Item):
     def __init__(self, name, description, use, color, ):
         super(Pieces, self).__init__(name, description, use)
+        self.color = color
         self.
 
 
