@@ -31,14 +31,14 @@ class HealingKit(Healing):
 class InstaHealth(Healing):
     def __init__(self, name, description, use, plus_health, color, ):
         super(InstaHealth, self).__init__(name, description, use, plus_health)
-        self.
         self.color = color
+        self.
 
 
 class Shield(Item):
-    def __init__(self, name, description, use, health, ):
+    def __init__(self, name, description, use, shield_health, ):
         super(Shield, self).__init__(name, description, use)
-        self.health = health
+        self.shield_health = shield_health
         self.
 
 
@@ -63,7 +63,7 @@ class Weapon(Item):
 
 
 class Character(object):
-    def __init__(self, name, description, inventory, weaponry, health):
+    def __init__(self, name, description, inventory, health):
         self.name = name
         self.description = description
         self.inventory = inventory
@@ -97,14 +97,13 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-
+inventory = []
 
 
 med_kit = HealingKit()
 
 
-main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", "Very Small "
-                           "Backpack", 15)
+main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory, 101)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
