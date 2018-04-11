@@ -22,15 +22,15 @@ class Healing(Item):
 
 
 class HealingKit(Healing):
-    def __init__(self, name, description, use, plus_health, ):
-        super(HealingKit, self).__init__(name, description, use, plus_health)
-        self.
+    def __init__(self, name, description, plus_health, price):
+        super(HealingKit, self).__init__(name, description, 'use', plus_health)
+        self.price = price
         def add_health(self):
             # main_character.health + plus_health
 
 class InstaHealth(Healing):
-    def __init__(self, name, description, use, plus_health, color, ):
-        super(InstaHealth, self).__init__(name, description, use, plus_health)
+    def __init__(self, name, description, plus_health, color, ):
+        super(InstaHealth, self).__init__(name, description, 'use', plus_health)
         self.color = color
         self.
 
@@ -46,12 +46,6 @@ class Pieces(Item):
     def __init__(self, name, description, use, color, ):
         super(Pieces, self).__init__(name, description, use)
         self.color = color
-        self.
-
-
-class Core(Pieces):
-    def __init__(self, name, description, use, color, ):
-        super(Core, self).__init__(name, description, use, color)
         self.
 
 
@@ -97,13 +91,14 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-inventory = []
+inventory_real = []
 
 
-med_kit = HealingKit()
+minor_med_kit = HealingKit("Minor Healing Kit", "Dr. Zed's Horse Pills", 40, 10)
+med_kit = HealingKit("Ligth Healing Kit", )
 
 
-main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory, 101)
+main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 101)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
