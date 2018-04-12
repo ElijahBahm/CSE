@@ -29,9 +29,8 @@ class HealingKit(Healing):
             # main_character.health + plus_health
 
 class InstaHealth(Healing):
-    def __init__(self, name, description, plus_health, color, ):
+    def __init__(self, name, description, plus_health, ):
         super(InstaHealth, self).__init__(name, description, 'use', plus_health)
-        self.color = color
         self.
 
 
@@ -94,9 +93,15 @@ class Room(object):
 inventory_real = []
 
 
-minor_med_kit = HealingKit("Minor Healing Kit", "Dr. Zed's Horse Pills", 40, 10)
-med_kit = HealingKit("Ligth Healing Kit", )
+minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 40, 10)
+light_kit = HealingKit("Light Healing Kit", "Small Bottle of Dr. Zed's Bullet Salve", 80, 30)
+kit = HealingKit("Mediocre Healing Kit", "Bottle of Dr. Zed's Body Spackle", 130, 60)
+greater_kit = HealingKit("Greater Healing Kit", "Large Bottle of Dr. Zed's Bullet Salve", 170, 100)
+super_kit = HealingKit("Super Healing Kit", "Giant Bottle of Dr. Zed's Horse Pills", 400, 300)
 
+minor_insta = InstaHealth("Minor InstaHealth", "Vial of Red Fluid", 20)
+light_insta = InstaHealth("Light InstaHealth", "Vial of Orange Fluid", 40)
+insta = InstaHealth("InstaHealth", "Vial of Yellow Fluid", 60)
 
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 101)
 
