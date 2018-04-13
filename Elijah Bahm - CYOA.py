@@ -54,6 +54,10 @@ class Weapon(Item):
         self.brand = brand
         self.attack = attack
 
+class Gun(Weapon):
+    def __init__(self, name, description, brand, attack):
+        super(Gun, self).__init__(name, description, "use", brand, attack)
+
 
 class Character(object):
     def __init__(self, name, description, inventory, health):
@@ -102,8 +106,12 @@ super_kit = HealingKit("Super Healing Kit", "Giant Bottle of Dr. Zed's Horse Pil
 minor_insta = InstaHealth("Minor InstaHealth", "Vial of Red Fluid", 20)
 light_insta = InstaHealth("Light InstaHealth", "Vial of Orange Fluid", 40)
 insta = InstaHealth("InstaHealth", "Vial of Yellow Fluid", 60)
+greater_insta = InstaHealth("Greater InstaHealth", "Vial of Green Fluid", 80)
+super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
-main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 101)
+
+main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
+                           101)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
