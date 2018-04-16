@@ -77,7 +77,7 @@ class Character(object):
 
 
 class Room(object):
-    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description):
+    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item):
         self.name = name
         self.north = north
         self.south = south
