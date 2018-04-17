@@ -13,25 +13,32 @@ class Item(object):
         self.description = description
         self.use = use
 
+        def
+
 
 class Healing(Item):
     def __init__(self, name, description, use, plus_health):
         super(Healing, self).__init__(name, description, use)
         self.plus_health = plus_health
 
+        def
 
 
 class HealingKit(Healing):
     def __init__(self, name, description, plus_health, price):
         super(HealingKit, self).__init__(name, description, 'use', plus_health)
         self.price = price
+
         def add_health(self):
-            # main_character.health + plus_health
+        # main_character.health + plus_health
+
 
 class InstaHealth(Healing):
     def __init__(self, name, description, plus_health, ):
         super(InstaHealth, self).__init__(name, description, 'use', plus_health)
         self.
+
+        def
 
 
 class Shield(Item):
@@ -40,6 +47,8 @@ class Shield(Item):
         self.shield_health = shield_health
         self.
 
+        def
+
 
 class Pieces(Item):
     def __init__(self, name, description, use, color, ):
@@ -47,16 +56,39 @@ class Pieces(Item):
         self.color = color
         self.
 
+        def
 
 class Weapon(Item):
-    def __init__(self, name, description, use, brand, attack):
+    def __init__(self, name, description, use, attack):
         super(Weapon, self).__init__(name, description, use)
-        self.brand = brand
         self.attack = attack
 
+        def
+
+
 class Gun(Weapon):
-    def __init__(self, name, description, brand, attack):
-        super(Gun, self).__init__(name, description, "use", brand, attack)
+    def __init__(self, name, description, attack, brand):
+        super(Gun, self).__init__(name, description, "use", attack)
+        self.brand = brand
+
+        def
+
+class Shotgun(Gun):
+    def __init__(self, name, description, attack, brand):
+        super(Shotgun, self).__init__(name, description, attack, brand)
+
+        def
+
+
+class SniperRifle(Gun):
+    def __init__(self, ):
+        super(SniperRifle, self).__init__()
+
+
+class RPG(Gun):
+    def __init__(self, ):
+        super(RPG, self).__init__()
+
 
 
 class Character(object):
@@ -77,7 +109,8 @@ class Character(object):
 
 
 class Room(object):
-    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item):
+    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item,
+                 character):
         self.name = name
         self.north = north
         self.south = south
