@@ -81,14 +81,45 @@ class Shotgun(Gun):
 
 
 class SniperRifle(Gun):
-    def __init__(self, ):
-        super(SniperRifle, self).__init__()
+    def __init__(self, name, description, attack, brand):
+        super(SniperRifle, self).__init__(name, description, attack, brand)
+
+        def
 
 
 class RPG(Gun):
-    def __init__(self, ):
-        super(RPG, self).__init__()
+    def __init__(self, name, description, attack, brand):
+        super(RPG, self).__init__(name, description, attack, brand)
 
+        def
+
+
+class Eridian(Gun):
+    def __init__(self, name, description, attack, brand):
+        super(Eridian, self).__init__(name, description, attack, brand)
+
+        def
+
+
+class Pistol(Gun):
+    def __init__(self, name, description, attack, brand):
+        super(Pistol, self).__init__(name, description, attack, brand)
+
+        def
+
+
+class CombatRifle(Gun):
+    def __init__(self, name, description, attack, brand):
+        super(CombatRifle, self).__init__(name, description, attack, brand)
+
+        def
+
+
+class SMG(Gun):
+    def __init__(self, name, description, attack, brand):
+        super(SMG, self).__init__(name, description, attack, brand)
+
+        def
 
 
 class Character(object):
@@ -144,7 +175,7 @@ super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           101)
+                           180)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
