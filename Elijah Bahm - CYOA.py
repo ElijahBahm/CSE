@@ -77,7 +77,8 @@ class Shotgun(Gun):
     def __init__(self, name, description, attack, brand):
         super(Shotgun, self).__init__(name, description, attack, brand)
 
-        def
+        def damage_multiplier(self):
+            self.attack * 11
 
 
 class SniperRifle(Gun):
@@ -91,7 +92,9 @@ class RPG(Gun):
     def __init__(self, name, description, attack, brand):
         super(RPG, self).__init__(name, description, attack, brand)
 
-        def
+        def damage_multiplier(self):
+            if
+                self.attack * 3
 
 
 class Eridian(Gun):
