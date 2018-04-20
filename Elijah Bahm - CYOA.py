@@ -30,7 +30,7 @@ class HealingKit(Healing):
         self.price = price
 
         def add_health(self):
-        # main_character.health + plus_health
+            # self.health + self.plus_health
 
 
 class InstaHealth(Healing):
@@ -93,13 +93,14 @@ class RPG(Gun):
         super(RPG, self).__init__(name, description, attack, brand)
 
         def damage_multiplier(self):
-            if
+            if self. name in triplets:
                 self.attack * 3
 
 
 class Eridian(Gun):
-    def __init__(self, name, description, attack, brand):
+    def __init__(self, name, description, attack, brand, sounds):
         super(Eridian, self).__init__(name, description, attack, brand)
+        self.sounds = sounds
 
         def
 
@@ -162,6 +163,7 @@ class Room(object):
 
 
 inventory_real = []
+triplets = []
 
 
 minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 40, 10)
