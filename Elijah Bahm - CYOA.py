@@ -30,7 +30,7 @@ class HealingKit(Healing):
         self.price = price
 
         def add_health(self):
-            # self.health + self.plus_health
+            Character.health + self.plus_health
 
 
 class InstaHealth(Healing):
@@ -93,7 +93,7 @@ class RPG(Gun):
         super(RPG, self).__init__(name, description, attack, brand)
 
         def damage_multiplier(self):
-            if self. name in triplets:
+            if self.name in triplets:
                 self.attack * 3
 
 
