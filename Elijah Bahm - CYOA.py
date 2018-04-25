@@ -135,12 +135,18 @@ class Character(object):
         self.state = "Afraid."
         # self.dialogue = "Hello."
 
-    def meet(self):
-        self.state = "Puzzled."
+    # def meet(self):
+    #     self.state = "Puzzled."
         # self.dialogue = "Where are we?"
 
-    def befriend(self):
-        self.state = "Happy."
+    # def befriend(self):
+    #     self.state = "Happy."
+
+
+class Enemy(Character):
+    def __init__(self, name, description, inventory, health, attack):
+        super(Enemy, self).__init__(name, description, "inventory", health)
+        self.attack = attack
 
 
 class Room(object):
@@ -181,6 +187,9 @@ super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
                            180)
+
+skag_pup = Enemy("Skag pup", "A dog like creature that can unhinge its jaw like a python.", None, 200, 20)
+
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
