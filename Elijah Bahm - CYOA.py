@@ -134,6 +134,13 @@ class Character(object):
         self.health = health
         self.state = "Afraid."
         # self.dialogue = "Hello."
+    # new
+
+    def pick_up(self):
+        if Item in Room:
+            inventory_real.append(Item)
+
+    def fight(self):
 
     # def meet(self):
     #     self.state = "Puzzled."
@@ -142,11 +149,13 @@ class Character(object):
     # def befriend(self):
     #     self.state = "Happy."
 
-
+# got rid of inventory for Enemy
 class Enemy(Character):
-    def __init__(self, name, description, inventory, health, attack):
+    def __init__(self, name, description, health, attack):
         super(Enemy, self).__init__(name, description, "inventory", health)
         self.attack = attack
+
+
 
 
 class Room(object):
@@ -167,7 +176,7 @@ class Room(object):
         global current_node         #global here somewhat bad practice
         current_node = globals()[getattr(self, direction)]
 
-
+# refix this
 inventory_real = []
 triplets = []
 
@@ -188,7 +197,10 @@ super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
                            180)
 
-skag_pup = Enemy("Skag pup", "A dog like creature that can unhinge its jaw like a python.", None, 200, 20)
+skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", 200, 20)
+# new
+skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", 400, 25)
+
 
 
 
