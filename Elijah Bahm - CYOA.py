@@ -133,6 +133,8 @@ class Character(object):
         self.inventory = inventory
         self.health = health
         self.state = "Afraid."
+        # New
+        self.dead = False
         # self.dialogue = "Hello."
     # new
 
@@ -160,7 +162,7 @@ class Enemy(Character):
 
 class Room(object):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item,
-                 character):
+                 character, enemy):
         self.name = name
         self.north = north
         self.south = south
