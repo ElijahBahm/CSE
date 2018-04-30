@@ -21,7 +21,9 @@ class Healing(Item):
         super(Healing, self).__init__(name, description, use)
         self.plus_health = plus_health
 
-        def
+        def add_health(self):
+            if HealingKit or InstaHealth in inventory_real:
+                self.plus_health += main_character.health
 
 
 class HealingKit(Healing):
@@ -30,7 +32,10 @@ class HealingKit(Healing):
         self.price = price
 
         def add_health(self):
-            main_character.health += self.plus_health
+            if HealingKit in inventory_real:
+                print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
+                      "on them very, very soon")
+                self.plus_health += main_character.health
 
 
 class InstaHealth(Healing):
@@ -38,7 +43,10 @@ class InstaHealth(Healing):
         super(InstaHealth, self).__init__(name, description, 'use', plus_health)
         self.
 
-        def
+        def add_health(self):
+            if InstaHealth in inventory_real:
+                print("You drink up these weird colored vials, and think ")
+                self.plus_health += main_character.health
 
 
 class Shield(Item):
