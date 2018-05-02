@@ -45,7 +45,8 @@ class InstaHealth(Healing):
 
         def add_health(self):
             if InstaHealth in inventory_real:
-                print("You drink up these weird colored vials, and think ")
+                print("You drink up these weird colored vials, and think this is definitely going to cause some "
+                      "problems.")
                 self.plus_health += main_character.health
 
 
@@ -55,7 +56,9 @@ class Shield(Item):
         self.shield_health = shield_health
         self.
 
-        def
+        def shield_equals_heals(self):
+            if Shield in inventory_real:
+                self.shield_health += main_character.health
 
 
 class Pieces(Item):
@@ -64,7 +67,10 @@ class Pieces(Item):
         self.color = color
         self.
 
-        def
+        def glow(self):
+            if Pieces in inventory_real:
+                print("Your bag, glows a bright pink.")
+
 
 class Weapon(Item):
     def __init__(self, name, description, use, attack):
