@@ -85,7 +85,8 @@ class Gun(Weapon):
         super(Gun, self).__init__(name, description, "use", attack)
         self.brand = brand
 
-        def
+        def sound(self):
+
 
 class Shotgun(Gun):
     def __init__(self, name, description, attack, brand):
@@ -157,7 +158,7 @@ class Character(object):
             inventory_real.append(Item)
 
     def fight(self):
-
+        if Enemy in current_node:
     # def meet(self):
     #     self.state = "Puzzled."
         # self.dialogue = "Where are we?"
@@ -176,7 +177,7 @@ class Enemy(Character):
 
 class Room(object):
     def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item,
-                 character, enemy):
+                 enemy):
         self.name = name
         self.north = north
         self.south = south
@@ -210,6 +211,7 @@ greater_insta = InstaHealth("Greater InstaHealth", "Vial of Green Fluid", 80)
 super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
+
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
                            180)
 
@@ -217,6 +219,10 @@ skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw
 # new
 skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", 400, 25)
 
+psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", 350, 40)
+
+badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
+                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", )
 
 
 
