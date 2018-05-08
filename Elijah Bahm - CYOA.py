@@ -142,13 +142,12 @@ class SMG(Gun):
 
 
 class Character(object):
-    def __init__(self, name, description, inventory, health):
+    def __init__(self, name, description, inventory, health, money):
         self.name = name
         self.description = description
         self.inventory = inventory
         self.health = health
-        self.state = "Afraid."
-        # New
+        self.money = money
         self.dead = False
         # self.dialogue = "Hello."
     # new
@@ -159,12 +158,8 @@ class Character(object):
 
     def fight(self):
         if Enemy in current_node:
-    # def meet(self):
-    #     self.state = "Puzzled."
-        # self.dialogue = "Where are we?"
 
-    # def befriend(self):
-    #     self.state = "Happy."
+
 
 # got rid of inventory for Enemy
 class Enemy(Character):
