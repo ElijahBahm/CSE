@@ -149,12 +149,12 @@ class Character(object):
         self.health = health
         self.money = money
         self.dead = False
-        # self.dialogue = "Hello."
-    # new
 
     def pick_up(self):
         if Item in Room:
             inventory_real.append(Item)
+
+    def
 
     def fight(self):
         if Enemy in current_node:
