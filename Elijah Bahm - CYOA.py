@@ -13,8 +13,6 @@ class Item(object):
         self.description = description
         self.use = use
 
-        def
-
 
 class Healing(Item):
     def __init__(self, name, description, use, plus_health):
@@ -24,6 +22,13 @@ class Healing(Item):
         def add_health(self):
             if HealingKit or InstaHealth in inventory_real:
                 self.plus_health += main_character.health
+            if HealingKit:
+                print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
+                      "on them very, very soon")
+            if InstaHealth:
+                print("You drink up these weird colored vials, and think this is definitely going to cause some "
+                      "problems.")
+
 
 
 class HealingKit(Healing):
@@ -31,23 +36,22 @@ class HealingKit(Healing):
         super(HealingKit, self).__init__(name, description, 'use', plus_health)
         self.price = price
 
-        def add_health(self):
-            if HealingKit in inventory_real:
-                print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
-                      "on them very, very soon")
-                self.plus_health += main_character.health
+        # def add_health(self):
+        #     if HealingKit in inventory_real:
+        #         print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
+        #               "on them very, very soon")
+        #         self.plus_health += main_character.health
 
 
 class InstaHealth(Healing):
-    def __init__(self, name, description, plus_health, ):
+    def __init__(self, name, description, plus_health):
         super(InstaHealth, self).__init__(name, description, 'use', plus_health)
-        self.
 
-        def add_health(self):
-            if InstaHealth in inventory_real:
-                print("You drink up these weird colored vials, and think this is definitely going to cause some "
-                      "problems.")
-                self.plus_health += main_character.health
+        # def add_health(self):
+        #     if InstaHealth in inventory_real:
+        #         print("You drink up these weird colored vials, and think this is definitely going to cause some "
+        #               "problems.")
+        #         self.plus_health += main_character.health
 
 
 class Shield(Item):
@@ -188,7 +192,7 @@ class Room(object):
         global current_node         #global here somewhat bad practice
         current_node = globals()[getattr(self, direction)]
 
-# refix this
+
 inventory_real = []
 triplets = []
 
@@ -208,7 +212,7 @@ super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
 main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           180)
+                           180, 0)
 
 skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", 200, 20)
 # new
@@ -217,8 +221,9 @@ skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws."
 psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", 350, 40)
 
 badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
-                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", )
+                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", 500, 55)
 
+bandit = Enemy("Bandit", "")
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
