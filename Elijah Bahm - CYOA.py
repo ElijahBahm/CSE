@@ -58,7 +58,6 @@ class Shield(Item):
     def __init__(self, name, description, use, shield_health, ):
         super(Shield, self).__init__(name, description, use)
         self.shield_health = shield_health
-        self.
 
         def shield_equals_heals(self):
             if Shield in inventory_real:
@@ -66,10 +65,9 @@ class Shield(Item):
 
 
 class Pieces(Item):
-    def __init__(self, name, description, use, color, ):
+    def __init__(self, name, description, use, color):
         super(Pieces, self).__init__(name, description, use)
         self.color = color
-        self.
 
         def glow(self):
             if Pieces in inventory_real:
@@ -81,15 +79,11 @@ class Weapon(Item):
         super(Weapon, self).__init__(name, description, use)
         self.attack = attack
 
-        def
-
 
 class Gun(Weapon):
     def __init__(self, name, description, attack, brand):
         super(Gun, self).__init__(name, description, "use", attack)
         self.brand = brand
-
-        def sound(self):
 
 
 class Shotgun(Gun):
@@ -158,17 +152,19 @@ class Character(object):
         if Item in Room:
             inventory_real.append(Item)
 
-    def
+    def taki_damage(self, amount):
+        self.health -= amount
 
-    def fight(self):
+    def hit(self, target):
+
+
+    def fight(self, enemy):
         if Enemy in current_node:
 
 
-
-# got rid of inventory for Enemy
 class Enemy(Character):
-    def __init__(self, name, description, health, attack):
-        super(Enemy, self).__init__(name, description, "inventory", health)
+    def __init__(self, name, description, health, attack, money):
+        super(Enemy, self).__init__(name, description, "inventory", health, money)
         self.attack = attack
 
 
