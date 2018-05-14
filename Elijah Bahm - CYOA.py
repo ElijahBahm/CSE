@@ -21,13 +21,9 @@ class Healing(Item):
 
         def add_health(self):
             if HealingKit or InstaHealth in inventory_real:
-                self.plus_health += main_character.health
-            if HealingKit:
-                print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
-                      "on them very, very soon")
-            if InstaHealth:
-                print("You drink up these weird colored vials, and think this is definitely going to cause some "
-                      "problems.")
+                self.plus_health += zero.health
+            else:
+                print ("You don't have any heals.")
 
 
 
@@ -38,8 +34,8 @@ class HealingKit(Healing):
 
         # def add_health(self):
         #     if HealingKit in inventory_real:
-        #         print("You do those drugs and realize that this is a little weird. And also that you will be dependent "
-        #               "on them very, very soon")
+        #         print("You do those drugs and realize that this is a little weird. And also that you will be
+        #               dependent on them very, very soon")
         #         self.plus_health += main_character.health
 
 
@@ -61,12 +57,12 @@ class Shield(Item):
 
         def shield_equals_heals(self):
             if Shield in inventory_real:
-                self.shield_health += main_character.health
+                self.shield_health += zero.health
 
 
 class Pieces(Item):
-    def __init__(self, name, description, use, color):
-        super(Pieces, self).__init__(name, description, use)
+    def __init__(self, name, description, color):
+        super(Pieces, self).__init__(name, description, "use")
         self.color = color
 
         def glow(self):
@@ -90,24 +86,28 @@ class Shotgun(Gun):
     def __init__(self, name, description, attack, brand):
         super(Shotgun, self).__init__(name, description, attack, brand)
 
-        def damage_multiplier(self):
+        if self.name in shotguns:
             self.attack * 11
+
+        # def damage_multiplier(self):
+        #     self.attack * 11
 
 
 class SniperRifle(Gun):
     def __init__(self, name, description, attack, brand):
         super(SniperRifle, self).__init__(name, description, attack, brand)
 
-        def
-
 
 class RPG(Gun):
     def __init__(self, name, description, attack, brand):
         super(RPG, self).__init__(name, description, attack, brand)
 
-        def damage_multiplier(self):
-            if self.name in triplets:
-                self.attack * 3
+        if self.name in triplets:
+            self.attack * 3
+
+        # def damage_multiplier(self):
+        #     if self.name in triplets:
+        #         self.attack * 3
 
 
 class Eridian(Gun):
@@ -115,57 +115,68 @@ class Eridian(Gun):
         super(Eridian, self).__init__(name, description, attack, brand)
         self.sounds = sounds
 
-        def
-
 
 class Pistol(Gun):
     def __init__(self, name, description, attack, brand):
         super(Pistol, self).__init__(name, description, attack, brand)
-
-        def
 
 
 class CombatRifle(Gun):
     def __init__(self, name, description, attack, brand):
         super(CombatRifle, self).__init__(name, description, attack, brand)
 
-        def
-
 
 class SMG(Gun):
     def __init__(self, name, description, attack, brand):
         super(SMG, self).__init__(name, description, attack, brand)
 
-        def
-
 
 class Character(object):
-    def __init__(self, name, description, inventory, health, money):
+    def __init__(self, name, description, inventory, health, money, attack):
         self.name = name
         self.description = description
         self.inventory = inventory
         self.health = health
         self.money = money
+        self.attack =attack
         self.dead = False
+
+    def equip(self, Weapon):
+        if Weapon in inventory_real:
+            input("Choose which weapon to equip.")
+            if input in all_weapons and input in inventory_real:
+                Weapon.attack = self.attack
 
     def pick_up(self):
         if Item in Room:
             inventory_real.append(Item)
 
-    def taki_damage(self, amount):
+    def take_damage(self, amount):
         self.health -= amount
 
     def hit(self, target):
+        target.take_damage(self.attack)
+        print('%s attacks %s for %s' % (self.name, target.name, self.attack))
+        if zero.health <= 0:
+            print('You died.')
+            exit(0)
+        if target.health <= 0:
+            print('The %s is dead.' % target.name)
 
+            self.money += target.money
+            if target.health < 0:
+                target.health = 0
+                inventory_real.append(target.inventory)
 
     def fight(self, enemy):
         if Enemy in current_node:
 
 
+
 class Enemy(Character):
-    def __init__(self, name, description, health, attack, money):
-        super(Enemy, self).__init__(name, description, "inventory", health, money)
-        self.attack = attack
+    def __init__(self, name, description, inventory, health, money, attack):
+        super(Enemy, self).__init__(name, description, inventory, health, money, attack)
+
 
 
 
@@ -183,6 +194,8 @@ class Room(object):
         self.southeast = southeast
         self.northeast = northeast
         self.description = description
+        self.item = item
+        self.enemy = enemy
 
     def move(self, direction):
         global current_node         #global here somewhat bad practice
@@ -190,7 +203,9 @@ class Room(object):
 
 
 inventory_real = []
+all_weapons = []
 triplets = []
+shotguns = []
 
 
 minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 40, 10)
@@ -207,17 +222,17 @@ super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
 
-main_character = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           180, 0)
+zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
+                           180, 0, 20)
 
-skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", 200, 20)
+skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", None, 200, 20, 10)
 # new
-skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", 400, 25)
+skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", None, 400, 25, 15)
 
-psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", 350, 40)
+psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", None, 350, 40, 25)
 
 badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
-                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", 500, 55)
+                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50)
 
 bandit = Enemy("Bandit", "")
 
