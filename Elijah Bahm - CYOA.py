@@ -86,28 +86,27 @@ class Shotgun(Gun):
     def __init__(self, name, description, attack, brand):
         super(Shotgun, self).__init__(name, description, attack, brand)
 
-        if self.name in shotguns:
-            self.attack * 11
-
-        # def damage_multiplier(self):
-        #     self.attack * 11
+        def shot_gun(self):
+            if self.name in shotguns:
+                self.attack * 11
 
 
 class SniperRifle(Gun):
     def __init__(self, name, description, attack, brand):
         super(SniperRifle, self).__init__(name, description, attack, brand)
 
+        def snip_dip(self):
+            if self.name in snip_dip:
+                self.attack * 2
+
 
 class RPG(Gun):
     def __init__(self, name, description, attack, brand):
         super(RPG, self).__init__(name, description, attack, brand)
 
-        if self.name in triplets:
-            self.attack * 3
-
-        # def damage_multiplier(self):
-        #     if self.name in triplets:
-        #         self.attack * 3
+        def helix_shot(self):
+            if self.name in triplets:
+                self.attack * 3
 
 
 class Eridian(Gun):
@@ -115,30 +114,47 @@ class Eridian(Gun):
         super(Eridian, self).__init__(name, description, attack, brand)
         self.sounds = sounds
 
+        def eridian_snip(self):
+            if self.name in eridian_sniper:
+                self.attack * 2
+
 
 class Pistol(Gun):
     def __init__(self, name, description, attack, brand):
         super(Pistol, self).__init__(name, description, attack, brand)
+
+        def repeater(self):
+            if self.name in repeater_type_pistol:
+                self.attack * 5
 
 
 class CombatRifle(Gun):
     def __init__(self, name, description, attack, brand):
         super(CombatRifle, self).__init__(name, description, attack, brand)
 
+        def burst_rifle(self):
+            if self.name in burst_combat_rifle:
+                self.attack * 3
+
 
 class SMG(Gun):
     def __init__(self, name, description, attack, brand):
         super(SMG, self).__init__(name, description, attack, brand)
 
+        def fuego_rapido(self):
+            if self.name in rapid_fire:
+                self. attack * 10
+
 
 class Character(object):
-    def __init__(self, name, description, inventory, health, money, attack):
+    def __init__(self, name, description, inventory, health, money, attack, max_health):
         self.name = name
         self.description = description
         self.inventory = inventory
         self.health = health
         self.money = money
         self.attack =attack
+        self.max_health = max_health
         self.dead = False
 
     def equip(self, Weapon):
@@ -175,7 +191,7 @@ class Character(object):
 
 class Enemy(Character):
     def __init__(self, name, description, inventory, health, money, attack):
-        super(Enemy, self).__init__(name, description, inventory, health, money, attack)
+        super(Enemy, self).__init__(name, description, inventory, health, money, attack, "max hp")
 
 
 
@@ -206,6 +222,11 @@ inventory_real = []
 all_weapons = []
 triplets = []
 shotguns = []
+snip_dip = []
+repeater_type_pistol = []
+rapid_fire = []
+burst_combat_rifle = []
+eridian_sniper = []
 
 
 minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 40, 10)
@@ -221,10 +242,6 @@ greater_insta = InstaHealth("Greater InstaHealth", "Vial of Green Fluid", 80)
 super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
-
-zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           180, 0, 20)
-
 skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", None, 200, 20, 10)
 # new
 skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", None, 400, 25, 15)
@@ -235,6 +252,10 @@ badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much
                       "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50)
 
 bandit = Enemy("Bandit", "")
+
+
+zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
+                           180, 0, 20, )
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
