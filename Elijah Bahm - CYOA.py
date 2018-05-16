@@ -185,7 +185,8 @@ class Character(object):
                 inventory_real.append(target.inventory)
 
     def fight(self, enemy):
-        if Enemy in current_node:
+        try:
+            if enemy == current_node.enemy:
 
 
 
