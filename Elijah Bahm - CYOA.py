@@ -7,6 +7,7 @@ import random
 # Instantiation of classes
 # Controller
 
+
 class Item(object):
     def __init__(self, name, description, use):
         self.name = name
@@ -24,7 +25,6 @@ class Healing(Item):
                 self.plus_health += zero.health
             else:
                 print ("You don't have any heals.")
-
 
 
 class HealingKit(Healing):
@@ -157,11 +157,11 @@ class Character(object):
         self.max_health = max_health
         self.dead = False
 
-    def equip(self, Weapon):
-        if Weapon in inventory_real:
+    def equip(self, weapon):
+        if weapon in inventory_real:
             input("Choose which weapon to equip.")
             if input in all_weapons and input in inventory_real:
-                Weapon.attack = self.attack
+                weapon.attack = self.attack
 
     def pick_up(self):
         if Item in Room:
@@ -187,12 +187,22 @@ class Character(object):
     def fight(self, enemy):
         try:
             if enemy == current_node.enemy:
+                enemy.health = enemy.max_health
+                while enemy.health != 0:
+                    choice = random.choice([enemy, self])
+                    if choice == self:
+                        enemy.hit(self)
+                    elif choice == enemy:
+                        self.hit(enemy)
+
+        except AttributeError:
+            print("Stop swinging that thing around, you're definitely going to accidentally shoot somebody.")
 
 
 
 class Enemy(Character):
-    def __init__(self, name, description, inventory, health, money, attack):
-        super(Enemy, self).__init__(name, description, inventory, health, money, attack, "max hp")
+    def __init__(self, name, description, inventory, health, money, attack, max_health):
+        super(Enemy, self).__init__(name, description, inventory, health, money, attack, max_health)
 
 
 
@@ -243,20 +253,27 @@ greater_insta = InstaHealth("Greater InstaHealth", "Vial of Green Fluid", 80)
 super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
 
-skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", None, 200, 20, 10)
-# new
-skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", None, 400, 25, 15)
+skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", None, 200, 20, 10,
+                 200)
 
-psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", None, 350, 40, 25)
+skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", None, 400, 25, 15, 400)
+
+psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", None, 350, 40, 25, 350)
 
 badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
-                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50)
+                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50, 500)
 
-bandit = Enemy("Bandit", "")
+bandit = Enemy("Bandit", "", None, 250, 30, 15, 250)
+
+badass_bandit = Enemy("Badass Bandit", "", None, 475, 50, 50, 475)
+
+nine_toes = Enemy("Nine Toes", "", None, 350, 100, 75, 350)
+
+
 
 
 zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           180, 0, 20, )
+                           180, 0, 20, 500)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
@@ -325,18 +342,22 @@ novac = Room("NoVac", "hello", None, None, None, None, None, None, None, 'You ar
 current_node = town_square
 directions = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest']
 short_directions = ['n', 's', 'e', 'w', 'nw', 'ne', 'se', 'sw']
+the_king_of_commands = []
 
 
 while True:
     print(current_node.name)
     print(current_node.description)
     command = input('>_').lower().strip()
+
     if command == 'quit':
         quit(0)
+
     elif command in short_directions:
         # Finds the command in shorts directions (index #)
         pos = short_directions.index(command)
         command = directions[pos]
+
     if command in directions:
         try:
             current_node.move(command)
