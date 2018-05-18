@@ -24,7 +24,7 @@ class Healing(Item):
             if HealingKit or InstaHealth in inventory_real:
                 self.plus_health += zero.health
             else:
-                print("You don't have any heals.")
+                print ("You don't have any heals.")
 
 
 class HealingKit(Healing):
@@ -178,7 +178,6 @@ class Character(object):
             exit(0)
         if target.health <= 0:
             print('The %s is dead.' % target.name)
-
             self.money += target.money
             if target.health < 0:
                 target.health = 0
@@ -192,8 +191,10 @@ class Character(object):
                     choice = random.choice([enemy, self])
                     if choice == self:
                         enemy.hit(self)
+                        print("Nice shot!")
                     elif choice == enemy:
                         self.hit(enemy)
+                        print("Nice dodge.")
 
         except AttributeError:
             print("Stop swinging that thing around, you're definitely going to accidentally shoot somebody.")
@@ -263,17 +264,23 @@ psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin yo
 badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
                       "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50, 500)
 
+
 bandit = Enemy("Bandit", "", None, 250, 30, 15, 250)
 
-badass_bandit = Enemy("Badass Bandit", "", None, 475, 50, 50, 475)
+badass_bandit = Enemy("Badass Bandit", "", [], 475, 50, 50, 475)
 
-nine_toes = Enemy("Nine Toes", "", None, 350, 100, 75, 350)
+nine_toes = Enemy("Nine Toes", "", [], 350, 100, 75, 350)
+
+sledge = Enemy("Sledge", "", [], 450, 150, 100, 450)
+
+tk_baja = Enemy("TK Baja", "Your old mentor and friend, who was infected by a ", [], 500, 250, 150, 500)
+
+swagger_souls = Enemy("Swagger Souls", "A high man in a knight helmet, who you somehow woke up and pissed off.", [],
+                      1000, 500, 250, 1000)
 
 
-
-
-zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real,
-                           180, 0, 20, 500)
+zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 180, 0, 20,
+                 700)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
@@ -342,7 +349,9 @@ novac = Room("NoVac", "hello", None, None, None, None, None, None, None, 'You ar
 current_node = town_square
 directions = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest']
 short_directions = ['n', 's', 'e', 'w', 'nw', 'ne', 'se', 'sw']
-the_king_of_commands = []
+the_king_of_commands = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest', 'n', 's',
+                        'e', 'w', 'nw', 'ne', 'se', 'sw', 'inventory', 'inv', 'help', 'kill self', 'seppuku', 'Why do I'
+                        ' have crippling depression?', ]
 
 
 while True:
