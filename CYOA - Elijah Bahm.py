@@ -7,30 +7,32 @@ import random
 # Instantiation of classes
 # Controller
 
+# Item Classes
+
 
 class Item(object):
-    def __init__(self, name, description, use):
+    def __init__(self, name, description, use, money):
         self.name = name
         self.description = description
         self.use = use
+        self.money = money
 
 
 class Healing(Item):
-    def __init__(self, name, description, use, plus_health):
-        super(Healing, self).__init__(name, description, use)
+    def __init__(self, name, description, use, money, plus_health):
+        super(Healing, self).__init__(name, description, use, money)
         self.plus_health = plus_health
 
         def add_health(self):
             if HealingKit or InstaHealth in inventory_real:
                 self.plus_health += zero.health
             else:
-                print ("You don't have any heals.")
+                print("You don't have any heals.")
 
 
 class HealingKit(Healing):
-    def __init__(self, name, description, plus_health, price):
-        super(HealingKit, self).__init__(name, description, 'use', plus_health)
-        self.price = price
+    def __init__(self, name, description, money, plus_health):
+        super(HealingKit, self).__init__(name, description, 'use', money, plus_health)
 
         # def add_health(self):
         #     if HealingKit in inventory_real:
@@ -41,7 +43,7 @@ class HealingKit(Healing):
 
 class InstaHealth(Healing):
     def __init__(self, name, description, plus_health):
-        super(InstaHealth, self).__init__(name, description, 'use', plus_health)
+        super(InstaHealth, self).__init__(name, description, 'use', "price", plus_health)
 
         # def add_health(self):
         #     if InstaHealth in inventory_real:
@@ -51,8 +53,8 @@ class InstaHealth(Healing):
 
 
 class Shield(Item):
-    def __init__(self, name, description, use, shield_health, ):
-        super(Shield, self).__init__(name, description, use)
+    def __init__(self, name, description, use, money, shield_health):
+        super(Shield, self).__init__(name, description, use, money)
         self.shield_health = shield_health
 
         def shield_equals_heals(self):
@@ -60,31 +62,31 @@ class Shield(Item):
                 self.shield_health += zero.health
 
 
-class Pieces(Item):
+class Piece(Item):
     def __init__(self, name, description, color):
-        super(Pieces, self).__init__(name, description, "use")
+        super(Piece, self).__init__(name, description, "use", "price")
         self.color = color
 
         def glow(self):
-            if Pieces in inventory_real:
+            if Piece in inventory_real:
                 print("Your bag, glows a bright pink.")
 
 
 class Weapon(Item):
-    def __init__(self, name, description, use, attack):
-        super(Weapon, self).__init__(name, description, use)
+    def __init__(self, name, description, use, money, attack):
+        super(Weapon, self).__init__(name, description, use, money)
         self.attack = attack
 
 
 class Gun(Weapon):
-    def __init__(self, name, description, attack, brand):
-        super(Gun, self).__init__(name, description, "use", attack)
+    def __init__(self, name, description, money, attack, brand):
+        super(Gun, self).__init__(name, description, "use", money, attack)
         self.brand = brand
 
 
 class Shotgun(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(Shotgun, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money, attack, brand):
+        super(Shotgun, self).__init__(name, description, money, attack, brand)
 
         def shot_gun(self):
             if self.name in shotguns:
@@ -92,8 +94,8 @@ class Shotgun(Gun):
 
 
 class SniperRifle(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(SniperRifle, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money ,attack, brand):
+        super(SniperRifle, self).__init__(name, description, money, attack, brand)
 
         def snip_dip(self):
             if self.name in snip_dip:
@@ -101,8 +103,8 @@ class SniperRifle(Gun):
 
 
 class RPG(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(RPG, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money, attack, brand):
+        super(RPG, self).__init__(name, description, money, attack, brand)
 
         def helix_shot(self):
             if self.name in triplets:
@@ -110,9 +112,8 @@ class RPG(Gun):
 
 
 class Eridian(Gun):
-    def __init__(self, name, description, attack, brand, sounds):
-        super(Eridian, self).__init__(name, description, attack, brand)
-        self.sounds = sounds
+    def __init__(self, name, description, attack, brand):
+        super(Eridian, self).__init__(name, description, "price", attack, brand)
 
         def eridian_snip(self):
             if self.name in eridian_sniper:
@@ -120,8 +121,8 @@ class Eridian(Gun):
 
 
 class Pistol(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(Pistol, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money, attack, brand):
+        super(Pistol, self).__init__(name, description, money, attack, brand)
 
         def repeater(self):
             if self.name in repeater_type_pistol:
@@ -129,8 +130,8 @@ class Pistol(Gun):
 
 
 class CombatRifle(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(CombatRifle, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money, attack, brand):
+        super(CombatRifle, self).__init__(name, description, money, attack, brand)
 
         def burst_rifle(self):
             if self.name in burst_combat_rifle:
@@ -138,13 +139,15 @@ class CombatRifle(Gun):
 
 
 class SMG(Gun):
-    def __init__(self, name, description, attack, brand):
-        super(SMG, self).__init__(name, description, attack, brand)
+    def __init__(self, name, description, money, attack, brand):
+        super(SMG, self).__init__(name, description, money, attack, brand)
+
 
         def fuego_rapido(self):
             if self.name in rapid_fire:
                 self. attack * 10
 
+# Character Classes
 
 class Character(object):
     def __init__(self, name, description, inventory, health, money, attack, max_health):
@@ -153,9 +156,8 @@ class Character(object):
         self.inventory = inventory
         self.health = health
         self.money = money
-        self.attack =attack
+        self.attack = attack
         self.max_health = max_health
-        self.dead = False
 
     def equip(self, weapon):
         if weapon in inventory_real:
@@ -163,9 +165,9 @@ class Character(object):
             if input in all_weapons and input in inventory_real:
                 weapon.attack = self.attack
 
-    def pick_up(self):
-        if Item in Room:
-            inventory_real.append(Item)
+    # def pick_up(self, item):
+    #     if item in current_node:
+    #         inventory_real.append(current_node.item)
 
     def take_damage(self, amount):
         self.health -= amount
@@ -174,14 +176,14 @@ class Character(object):
         target.take_damage(self.attack)
         print('%s attacks %s for %s' % (self.name, target.name, self.attack))
         if zero.health <= 0:
-            print('You died.')
+            print('You are very, very dead.')
             exit(0)
         if target.health <= 0:
             print('The %s is dead.' % target.name)
             self.money += target.money
             if target.health < 0:
                 target.health = 0
-                inventory_real.append(target.inventory)
+                inventory_real.extend(target.inventory)
 
     def fight(self, enemy):
         try:
@@ -191,27 +193,28 @@ class Character(object):
                     choice = random.choice([enemy, self])
                     if choice == self:
                         enemy.hit(self)
-                        print("Nice shot!")
+                        print("Nice dodge")
+                        print("Your health:" + str(zero.health))
+                        print("Enemy health:" + str(current_node.enemy.health))
                     elif choice == enemy:
                         self.hit(enemy)
-                        print("Nice dodge.")
+                        print("Nice shot.")
+                        print("Your health:" + str(zero.health))
+                        print("Enemy health:" + str(current_node.enemy.health))
 
         except AttributeError:
-            print("Stop swinging that thing around, you're definitely going to accidentally shoot somebody.")
-
+            print("Stop swinging that thing around, you're DEFINITELY going to 'Accidentally' shoot somebody.")
 
 
 class Enemy(Character):
     def __init__(self, name, description, inventory, health, money, attack, max_health):
         super(Enemy, self).__init__(name, description, inventory, health, money, attack, max_health)
 
-
-
+# Room Class
 
 
 class Room(object):
-    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, item,
-                 enemy):
+    def __init__(self, name, north, south, east, west, southwest, northwest, southeast, northeast, description, enemy):
         self.name = name
         self.north = north
         self.south = south
@@ -222,12 +225,13 @@ class Room(object):
         self.southeast = southeast
         self.northeast = northeast
         self.description = description
-        self.item = item
         self.enemy = enemy
 
     def move(self, direction):
-        global current_node         #global here somewhat bad practice
+        global current_node
         current_node = globals()[getattr(self, direction)]
+
+# The useful lists
 
 
 inventory_real = []
@@ -240,127 +244,214 @@ rapid_fire = []
 burst_combat_rifle = []
 eridian_sniper = []
 
+# Instantiation of Items
 
-minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 40, 10)
-light_kit = HealingKit("Light Healing Kit", "Small Bottle of Dr. Zed's Bullet Salve", 80, 30)
-kit = HealingKit("Mediocre Healing Kit", "Bottle of Dr. Zed's Body Spackle", 130, 60)
-greater_kit = HealingKit("Greater Healing Kit", "Large Bottle of Dr. Zed's Bullet Salve", 170, 100)
-super_kit = HealingKit("Super Healing Kit", "Giant Bottle of Dr. Zed's Horse Pills", 400, 300)
+minor_kit = HealingKit("Minor Healing Kit", "Tiny Bottle of Dr. Zed's Horse Pills", 10, 40)
+light_kit = HealingKit("Light Healing Kit", "Small Bottle of Dr. Zed's Bullet Salve", 30, 80)
+kit = HealingKit("Mediocre Healing Kit", "Bottle of Dr. Zed's Body Spackle", 60, 130)
+greater_kit = HealingKit("Greater Healing Kit", "Large Bottle of Dr. Zed's Bullet Salve", 100, 170)
+super_kit = HealingKit("Super Healing Kit", "Giant Bottle of Dr. Zed's Horse Pills", 300, 400)
 
 minor_insta = InstaHealth("Minor InstaHealth", "Vial of Red Fluid", 20)
 light_insta = InstaHealth("Light InstaHealth", "Vial of Orange Fluid", 40)
 insta = InstaHealth("InstaHealth", "Vial of Yellow Fluid", 60)
-greater_insta = InstaHealth("Greater InstaHealth", "Vial of Green Fluid", 80)
 super_insta = InstaHealth("Super InstaHealth", "Vial of Pink Fluid", 120)
 
+# The Pieces of the Key to the Vault
 
-skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", None, 200, 20, 10,
-                 200)
+core = Piece("The Core", "This is probably the most important part of the key, it is very large and has many cracks in "
+             "it. You believe that is just from how old it is, \n But in the back of your head you think it might be "
+             "something much, much worse.", "The outside is a bluish, gray and it is radiating a pink glow.")
 
-skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", None, 400, 25, 15, 400)
+left_side = Piece("The Left Side of the Key", "", "This piece is gray with an orange tint.")
 
-psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", None, 350, 40, 25, 350)
+right_side = Piece("The Right Side of the Key", "", "This piece is gray with a red tint.")
+
+# Instantiation of Weapons
+tks_wave = Shotgun("T.K's Wave", "Ride the Wave, Dude!", None, 150, "Dahl")
+sledges_shotgun = Shotgun("Sledge's Shotgun", "The Legend Lives", None, 100, "Hyperion")
+swaggers_lovely_r8 = Pistol("Swagger's Lovely R8 Revolver", "Yeet! Yeet! Yeet! Yeet!", None, 300, "Jakobs")
+
+repeater = Pistol("The Fury Repeater", "It's fast, it's furious, it's pure FURY.", 30, 30, "Hyperion")
+revolver = Pistol("The Viper", "", 40, 45, "Jakobs")
+sniper = SniperRifle("Hawkeye", "", 80, 75, "Jakobs")
+bone_shredder = SMG("The Bone Shredder", "", 75, 70, "Bandit")
+rpg = RPG("Yeet", "It shoots rockets, Get Used To It.", 150, 110, "Vladof")
+combat_rifle = CombatRifle("", "", 55, 60, "Dahl")
+machine_gun = CombatRifle("", "", 65, 65, "Hyperion")
+golden_gun_galactic_destruction = Eridian("The Golden Gun Of Galactic Destruction", "What do you need as a description?"
+                                          " It's right there, it's the name.", 10000, "Eridian")
+
+
+# Instantiation of Enemies
+
+skag_pup = Enemy("Skag pup", "A young dog like creature that can unhinge its jaw like a python.", [minor_insta], 200,
+                 20, 10, 200)
+
+skag = Enemy("Skag", "An adult, ugly dog like creature that has unhinging jaws.", [light_insta], 400, 25, 15, 400)
+
+psycho = Enemy("Psycho", "An infuriated man who keeps screaming, 'I will skin you alive.'", [super_insta], 350, 40, 25,
+               350)
 
 badass_psycho = Enemy("Badass Psycho", "An even more infuriated man, who is much bigger than the other psychos and he "
-                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", None, 500, 55, 50, 500)
+                      "keeps screaming, 'When, I find you I'm gonna wear you as a hat'", [], 500, 55, 50, 500)
 
-
-bandit = Enemy("Bandit", "", None, 250, 30, 15, 250)
+bandit = Enemy("Bandit", "", [insta, ], 250, 30, 15, 250)
 
 badass_bandit = Enemy("Badass Bandit", "", [], 475, 50, 50, 475)
 
-nine_toes = Enemy("Nine Toes", "", [], 350, 100, 75, 350)
+nine_toes = Enemy("Nine Toes", "9 Toes. (Also he has 3 balls.)", [core, ], 350, 100, 75, 350)
 
-sledge = Enemy("Sledge", "", [], 450, 150, 100, 450)
+sledge = Enemy("Sledge", "Sledge, he has a giant sledgehammer and I mean giant. (P.S. You guys aren't friends.)", [],
+               450, 150, 100, 450)
 
-tk_baja = Enemy("TK Baja", "Your old mentor and friend, who was infected by a ", [], 500, 250, 150, 500)
+tk_baha = Enemy("T.K. Baha", "Your old mentor and friend, who was taken over by a brain slug and now it just sits there"
+                " atop of his head.", [tks_wave], 500, 250, 150, 500)
 
-swagger_souls = Enemy("Swagger Souls", "A high man in a knight helmet, who you somehow woke up and pissed off.", [],
-                      1000, 500, 250, 1000)
+swagger_souls = Enemy("Swagger Souls", "A high man in a knight helmet, who you somehow woke up and pissed off.",
+                      [swaggers_lovely_r8], 1000, 500, 250, 1000)
 
+leviathan = Enemy("The Guardian", "Better name The Leviathan.", None, 10000, 0, 500, 10000)
+# Instantiation of you
 
-zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 180, 0, 20,
+zero = Character("Zer0", "A ruthless assassin that has been enticed by the treasure here.", inventory_real, 230, 0, 20,
                  700)
 
 
 loathing_des = input("What event made you loath someone or yourself the most? Please make this descriptive and "
-                     "somewhat in depth.")
+                     "somewhat in depth. \n")
+
+# Instantiation of the Rooms
 
 town_square = Room("Town Square of Dust", "town_hall", None, "ride_station", "market", None, "public_restroom", None,
                    None, 'You are in a big open square in the center of this town. The big sign in front of you says '
-                   '"WELCOME TO DUST".')
+                   '"WELCOME TO DUST".', None)
 
 market = Room("The Market", None, None, "town_square", None, None, None, None, None, 'You are in what used to be a '
               'giant bazaar, now there is only one vendor open. \n His shop is only slightly nicer than the than the '
-              'abandoned ones, mainly just less dusty.')
+              'abandoned ones, mainly just less dusty.', None)
 
 town_hall = Room("Town Hall", None, "town_square", None, "public_restroom", None, None, None, None, 'You are in a very'
                  ' long, dark, and tall building. It has a small display of the \n founding of the town and on of '
-                 'something like a teleporter that needs a special key to use.')
+                 'something like a teleporter that needs a special key to use.', None)
 
 public_restroom = Room("The One Public Restroom", None, None, "town_hall", None, None, None, "town_square", None, 'You '
                        'regret coming here, there is s#@!, c#@!, feces, whatever you want to call it, everywhere. \n '
-                       'You have the slightest feeling that something useful will be here.')
+                       'You have the slightest feeling that something useful will be here.', skag_pup)
 
 ride_station = Room("Catch-A-Ride-Station", "badlands", "worlds_end", "death", "town_square", None, None, None, None,
                     'You are in a small area that is covered with a tin roof and has a terminal, that you \n assume '
-                    'will either teleport you or spawn something for you.')
+                    'will either teleport you or spawn something for you.', bandit)
 
 badlands = Room("The Badlands", None, "ride_station", "suffering", None, None, None, None, None, 'Again, you feel '
                 'regret as soon as you come here, as soon as the eye can see there are \n just heads on bloody stakes '
                 'and bodies strung up with chains every where else in the area. And, yet again, you feel that there '
-                'will be something here.')
+                'will be something here.', badass_bandit)
 
 suffering = Room("Suffering", None, "death", None, "badlands", None, None, None, None, 'You are in the remains of a '
                  'grand city and the last survivor from this city is an old man, \n who is very weak and malnourished, '
-                 'he is only a couple feet away from you. You hold his life in the palm of your hand.')
+                 'he is only a couple feet away from you. You hold his life in the palm of your hand.', psycho)
 
 death = Room("Death, The Town", "suffering", "sick", None, "ride_station", None, None, "damage_control", "loathing",
              'You are in the middle of what used to be a town, until sometime in the past day or past couple hours, \n '
-             'it was burnt to the ground and all you can smell is burnt flesh. Oh, the irony here.')
+             'it was burnt to the ground and all you can smell is burnt flesh. Oh, the irony here.', badass_psycho)
 
 loathing = Room("Loathing", None, None, None, None, "death", None, None, None, 'You are in a place that has a projector'
-                ' playing a bad time in your life, here it is %s.' % loathing_des)
+                ' playing a bad time in your life, here it is. \n %s.' % loathing_des, tk_baha)
 
 damage_control = Room("Damage Control", None, None, None, None, None, "death", None, None, 'You are in an open field '
                       'that has a hologram of what happened here, it is showing a big riot about something, which '
-                      'caused the police to fight against the civilians.')
+                      'caused the police to fight against the civilians.', sledge)
 
 sick = Room("Sick", "death", None, None, "worlds_end", None, None, None, None, 'You are in a town of depressed, '
-            'misunderstood people; to get what you need here you will have to understand what they go through.')
+            'misunderstood people; to get what you need here you will have to understand what they go through.',
+            swagger_souls)
 
 worlds_end = Room("World's End, The Town", "ride_station", "regret", "sick", "hello", None, None, None, None, 'You are '
                   'in an aptly named town because sometime recently there was an earthquake that split the town almost'
-                  ' in half and cut of their worlds from each other.')
+                  ' in half and cut of their worlds from each other.', None)
 
 regret = Room("Regret", "worlds_end", None, None, None, None, None, None, None, 'You are with the body of a man that '
               'deserves a Darwin Award, he somehow killed himself trying to cut down one of his own trees in his '
-              'front yard.')
+              'front yard.', nine_toes)
 
 hello = Room("Hello", None, "novac", "worlds_end", None, None, None, None, None, "You meet someone here the first thing"
              " they say is the town's slogan 'We didn't want you to be forgot about, so we made our name something "
-             "that is forever used.")
+             "that is forever used.", None)
 
 novac = Room("NoVac", "hello", None, None, None, None, None, None, None, 'You are in a place that was named again after'
              ' it was abandoned, you overhear this from a conversation a couple paces away from you, you see the "No '
-             'Vacancy" sign that turned into the "NoVac" sign.')
+             'Vacancy" sign that turned into the "NoVac" sign.', skag)
 
+vault = Room("The Vault", None, None, None, None, None, None, None, None, '', leviathan)
 
 current_node = town_square
 directions = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest']
 short_directions = ['n', 's', 'e', 'w', 'nw', 'ne', 'se', 'sw']
 the_king_of_commands = ['north', 'south', 'east', 'west', 'northwest', 'northeast', 'southeast', 'southwest', 'n', 's',
-                        'e', 'w', 'nw', 'ne', 'se', 'sw', 'inventory', 'inv', 'help', 'kill self', 'seppuku', 'Why do I'
-                        ' have crippling depression?', ]
+                        'e', 'w', 'nw', 'ne', 'se', 'sw', 'inventory', 'inv', 'help', 'kill self', 'seppuku', 'why do i'
+                        ' have crippling depression?', 'yeet', 'fight', 'equip', 'buy', 'heal', 'small heal', 'cash',
+                        'all commands']
 
+# The Controller
 
 while True:
+    print("If you need help navigating this game type 'help' to get the basics of the controls.\n")
     print(current_node.name)
     print(current_node.description)
     command = input('>_').lower().strip()
 
+    if current_node == town_hall:
+        if core and right_side and left_side in inventory_real:
+            current_node = vault
+            print("")
+
+    if zero.health <= 0:
+        exit(0)
+
+    if command == 'heal':
+        if minor_kit in inventory_real:
+            if zero.health == zero.max_health:
+                print("")
+
+    if command == 'cash':
+        print(str(zero.money))
+
     if command == 'quit':
         quit(0)
+
+    if command == 'inv' or 'inventory':
+        print(str(inventory_real))
+
+    if command == 'buy':
+        shop = [golden_gun_galactic_destruction, ]
+        if current_node == market:
+            print("The Golden Gun Of Galactic Destruction       "
+                  "               (0)                           ")
+
+    if command == 'fight':
+        print("<================}==========================================================================>>")
+        print(current_node.enemy.name)
+        print(current_node.enemy.description)
+
+        zero.fight(current_node.enemy)
+        # print(str(zero.health))
+        # print(str(current_node.enemy.health))
+
+    if command == 'seppuku':
+        print("You turn your trusty sword against yourself because you feel like you have disrespected your sensei. \n "
+              "You successfully disembowel yourself, but you are still alive, so you toss your sword to Claptrap who "
+              "realizes what you are trying to do, and successfully beheads you, which finally kills this warrior. \n "
+              "When this happens you wish you told Claptrap that he was finally useful.")
+        zero.health = 0
+        exit(0)
+
+    if command == 'help':
+        print("Type 'fight' to attack/fight. \n Type 'inventory' or 'inv' to look at what you have in your inventory. "
+              "\n Type 'equip' to choose which weapon you are want to use. \n ")
+
+    # if command == 'all commands':
+    #     print(str(the_king_of_commands))
 
     elif command in short_directions:
         # Finds the command in shorts directions (index #)
@@ -371,7 +462,9 @@ while True:
         try:
             current_node.move(command)
         except KeyError:
-            print('Nope, Sorry.')
-    else:
-        print('Command Not Recognized.')
+            print('Nope, Sorry. \n Try again.')
+
+    elif command not in the_king_of_commands:
+        print("Command Not Recognized. \n You might've messed up somewhere, type in 'all commands' and this will show "
+              "the full list of useful commands.")
     print()

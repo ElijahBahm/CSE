@@ -21,21 +21,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Elijah Bahm - CYOA.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Elijah Bahm - CYOA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Elijah Bahm - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+            <state relative-caret-position="364">
+              <caret line="411" column="0" lean-forward="false" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CYOA - Elijah Bahm.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CYOA - Elijah Bahm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CYOA - Elijah Bahm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4675">
-              <caret line="275" column="78" lean-forward="false" selection-start-line="275" selection-start-column="78" selection-end-line="275" selection-end-column="78" />
+            <state relative-caret-position="532">
+              <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,8 +79,8 @@
         <option value="$PROJECT_DIR$/Items - Elijah Bahm.py" />
         <option value="$PROJECT_DIR$/Items Real- Elijah Bahm.py" />
         <option value="$PROJECT_DIR$/Elijah Bahm - World Map OOP.py" />
-        <option value="$PROJECT_DIR$/CYOA - Elijah Bahm.py" />
         <option value="$PROJECT_DIR$/Elijah Bahm - CYOA.py" />
+        <option value="$PROJECT_DIR$/CYOA - Elijah Bahm.py" />
       </list>
     </option>
   </component>
@@ -123,7 +123,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Programmer - Elijah Bahm">
+  <component name="RunManager" selected="Python.CYOA - Elijah Bahm">
+    <configuration name="CYOA - Elijah Bahm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CYOA - Elijah Bahm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="Class Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,23 +154,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CSE" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Class Notes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="Function Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function Notes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -228,19 +228,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Lucky 7's" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Function Notes" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Pythagorean Theorem - Elijah Bahm" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Class Notes" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Programmer - Elijah Bahm" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Pythagorean Theorem - Elijah Bahm" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Class Notes" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Programmer - Elijah Bahm" />
+      <item index="5" class="java.lang.String" itemvalue="Python.CYOA - Elijah Bahm" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Programmer - Elijah Bahm" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Class Notes" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Pythagorean Theorem - Elijah Bahm" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Function Notes" />
+        <item index="0" class="java.lang.String" itemvalue="Python.CYOA - Elijah Bahm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Programmer - Elijah Bahm" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Class Notes" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Pythagorean Theorem - Elijah Bahm" />
       </list>
     </recent_temporary>
   </component>
@@ -262,14 +262,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5087848" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30269414" sideWeight="0.49121523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2836767" sideWeight="0.49121523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -582,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -605,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -613,22 +610,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Elijah Bahm - CYOA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="411" column="0" lean-forward="false" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CYOA - Elijah Bahm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4675">
-          <caret line="275" column="78" lean-forward="false" selection-start-line="275" selection-start-column="78" selection-end-line="275" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Elijah Bahm - CYOA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        <state relative-caret-position="532">
+          <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
           <folding />
         </state>
       </provider>
